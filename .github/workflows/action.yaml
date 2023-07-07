@@ -16,7 +16,7 @@ jobs:
         with:
           puthon-version: 3.8
       - name: Install linting libraries
-        run:
+        run: |
           cd function
           pip install flake8
       - name: Lint with flake8
@@ -77,5 +77,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Update function code
-        run:
+        run: |
           aws lambda update-function-code --function-name my-funtion --s3-bucket mu-bucket-46138 --s3-key ${{ github.sha }}.zip --publish

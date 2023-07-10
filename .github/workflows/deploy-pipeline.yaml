@@ -69,7 +69,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token}}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url}}
-          path: ./${{ github.sha }}.zip
+          asset_path: ./${{ github.sha }}.zip
           asset_name: source-code-with-libraries.zip
           asset_content_type: application/zip
   
